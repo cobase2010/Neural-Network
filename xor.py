@@ -20,6 +20,10 @@ network = [
 # train
 train(network, mse, mse_prime, X, Y, epochs=10000, learning_rate=0.1)
 
+# print(predict(network, np.reshape([[0, 0], [0, 1], [1, 0], [1, 1]], (4, 2, 1))))
+for x in X:
+    print(predict(network, x))
+
 # decision boundary plot
 points = []
 for x in np.linspace(0, 1, 20):
