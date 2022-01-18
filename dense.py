@@ -4,6 +4,8 @@ from layer import Layer
 class Dense(Layer):
     def __init__(self, input_size, output_size):
         self.weights = np.random.randn(output_size, input_size)
+        # Using Xavier initialization
+        # self.weights = np.random.randn(output_size, input_size) * np.sqrt(2/(input_size + output_size))
         self.bias = np.random.randn(output_size, 1)
 
     def forward(self, input):

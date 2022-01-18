@@ -20,5 +20,5 @@ def train(network, loss, loss_prime, x_train, y_train, epochs = 1000, learning_r
                 grad = layer.backward(grad, learning_rate)
 
         error /= len(x_train)
-        if verbose:
-            print(f"{e + 1}/{epochs}, error={error}")
+        if e % 1000 == 0 and verbose:
+            print(f"{e + 1}/{epochs}, error={error:1.6f}")
